@@ -1,12 +1,12 @@
-# Docker Exec Image: Haskell
+# Docker Exec Image: s
 
-A Dockerfile describing an container capable of executing Haskell source files.
+A Dockerfile describing an container capable of executing s source files.
 
 # Build
 
 ```sh
 git clone https://github.com/docker-exec/haskell.git
-docker build -t dexec/haskell .
+docker build -t dexec/lang-haskell .
 ```
 
 # Usage
@@ -16,7 +16,7 @@ In a directory containing a script e.g. foo.hs, run:
 ```sh
 docker run -t --rm \
     -v $(pwd -P)/foo.hs:/tmp/dexec/build/foo.hs \
-    dexec/haskell foo.hs
+    dexec/lang-haskell foo.hs
 ```
 
 ## Passing arguments to the script
@@ -34,7 +34,7 @@ Each argument passed must be prefixed in this way, e.g.
 ```sh
 docker run -t --rm \
     -v $(pwd -P)/foo.hs:/tmp/dexec/build/foo.hs \
-    dexec/haskell foo.hs \
+    dexec/lang-haskell foo.hs \
     --arg='hello world' \
     --arg=foo \
     --arg=bar
